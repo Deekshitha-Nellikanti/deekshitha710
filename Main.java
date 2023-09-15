@@ -652,7 +652,7 @@ public class Main {
                     }
 
                 } catch (SQLException ex) {
-                    System.out.println(ex);
+                    // System.out.println(ex);
                 }
             }
         });
@@ -679,7 +679,8 @@ public class Main {
                     String fid = tffid.getText();
                     if (fid != "") {
                         int ofid = Integer.parseInt(fid);
-                        String str = "SELECT * FROM survey_data WHERE fid = " + ofid + "AND username=" + username;
+                        String str = "SELECT * FROM survey_data WHERE fid = " + ofid + " AND username='" + username
+                                + "'";
 
                         Statement stm = connection.createStatement();
                         ResultSet rst = ((java.sql.Statement) stm).executeQuery(str);
@@ -833,7 +834,7 @@ public class Main {
 
                                 } while (rst.next());
                                 res1.setVisible(true);
-                                res1.setLayout(new GridLayout(3, 1));
+                                // res1.setLayout(new GridLayout(3, 1));
                                 res1.setLocationRelativeTo(null);
                             }
                         }
